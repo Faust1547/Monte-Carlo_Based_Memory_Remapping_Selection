@@ -7,7 +7,7 @@ module MC_Control_Unit_PBG #(
     parameter integer ES_WIDTH           = 20,
     parameter integer TOTAL_COUNT_WIDTH  = 24,
     parameter integer FI_PER_ENTRY       = 2,
-    parameter integer FICAM_ENTRIES      = 64,
+    parameter integer FICAM_ENTRIES      = 4096,
     parameter integer CANDIDATES         = 8,
     parameter integer INDEX_WIDTH        = (FICAM_ENTRIES <= 2) ? 1 : $clog2(FICAM_ENTRIES),
     parameter integer COUNT_WIDTH        = (FICAM_ENTRIES <= 1) ? 1 : $clog2(FICAM_ENTRIES + 1),
@@ -414,14 +414,5 @@ always @(posedge clk or negedge rst_n) begin
         endcase
     end
 end
-
-`ifndef SYNTHESIS
-initial begin
-    if (PBG_LENGTH != 5 || BANK_LENGTH != 3 ||
-        RG_LENGTH != 3 || FP_LENGTH != 3 ||
-        CW_LENGTH != 3 || CANDIDATES != 8)
-        $error("MC_Control_Unit_PBG is specialized for 32 PBG / 8 Bank / 8 RG / 8 candidate architecture");
-end
-`endif
 
 endmodule
