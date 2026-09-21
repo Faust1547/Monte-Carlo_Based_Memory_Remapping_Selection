@@ -162,7 +162,7 @@ reg [7:0]  intra_sram_write_data [0:7];
 integer write_count_before;
 reg [13:0] expected_sram_address;
 
-Interface_With_SRAM_Command_Pipeline #(
+TOP #(
     .NUM_MODEL_PAGES      (NUM_MODEL_PAGES),
     .PAGE_INDEX_WIDTH     (PAGE_INDEX_WIDTH),
     .NUM_FBB_PER_PAGE     (NUM_FBB_PER_PAGE),
