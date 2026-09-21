@@ -1,0 +1,33 @@
+{
+  "checkpoint_path": "D:\\Anaconda\\PythonCode\\data\\vgg16_cifar10_ckpt_best.pth",
+  "state_dict_tensor_count": 32,
+  "strict_load": true,
+  "selected_parameter_count": 134301514,
+  "bounding_box_size": 4,
+  "block_count": 33575379,
+  "occupied_fbb_count": 327885,
+  "valid_storage_bytes": 167876893,
+  "valid_storage_bits": 1343015144,
+  "allocated_fbb_bytes_including_padding": 167877120,
+  "occupied_16KiB_pages_including_padding": 10247,
+  "exp_p_one_measured": [
+    0.0,
+    0.0,
+    1.0,
+    1.0,
+    0.5051958162557152,
+    0.4954435212778983,
+    0.5221933607957188,
+    0.5153754779655652
+  ],
+  "sm_p_one_measured": [
+    0.5360881709792192,
+    0.4141502604356344,
+    0.4061069333887033,
+    0.45320148810831723,
+    0.4786304642850117,
+    0.4916626703106266,
+    0.49810456343775844,
+    0.5013932605406072
+  ]
+}
