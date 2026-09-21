@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 module Transposer #(
     parameter integer WORD_COUNT  = 8,
     parameter integer WW_LENGTH   = 8,
