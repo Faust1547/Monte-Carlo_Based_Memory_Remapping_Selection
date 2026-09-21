@@ -1,0 +1,175 @@
+{
+  "seed": 20260801,
+  "output_dir": "vgg16_global_mode_accuracy_output",
+  "model": {
+    "checkpoint_path": "D:/Anaconda/PythonCode/data/vgg16_cifar10_ckpt_best.pth",
+    "architecture": "auto",
+    "num_classes": 10,
+    "device": "auto",
+    "state_dict_key": "auto",
+    "strict_load": true,
+    "custom_factory": null,
+    "custom_factory_kwargs": {},
+    "parameter_include_regex": [
+      ".*"
+    ],
+    "parameter_exclude_regex": []
+  },
+  "dataset": {
+    "root": "D:/Anaconda/PythonCode/data",
+    "download": true,
+    "batch_size": 256,
+    "num_workers": 0,
+    "persistent_workers": false,
+    "max_eval_samples": null,
+    "mean": [
+      0.4914,
+      0.4822,
+      0.4465
+    ],
+    "std": [
+      0.247,
+      0.2435,
+      0.2616
+    ]
+  },
+  "geometry": {
+    "banks": 8,
+    "rgs": 8,
+    "words": 8,
+    "bits": 8
+  },
+  "codec": {
+    "kind": "block_msf_bfp8",
+    "bounding_box_size": 4,
+    "exponent_bias": 64,
+    "exponent_min": -64,
+    "exponent_max": 63,
+    "mantissa_scale": 64.0
+  },
+  "remap": {
+    "inter_direction": "right",
+    "exp_es": [
+      31,
+      7,
+      7,
+      7,
+      7,
+      15,
+      15,
+      3
+    ],
+    "sm_es": [
+      31,
+      15,
+      7,
+      3,
+      1,
+      1,
+      1,
+      1
+    ],
+    "exp_msb_index": 0,
+    "exp_mask_factor": 0.0,
+    "p_one_source": "measured",
+    "exp_p_one": [
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "sm_p_one": [
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ]
+  },
+  "offline_saf": {
+    "ber_values": [
+	  1e-9,
+	  3e-9,
+	  5e-9,
+	  7e-9,
+	  9e-9,
+	  1e-8,
+	  3e-8,
+	  5e-8,
+	  7e-8,
+	  1e-7,
+	  3e-7,
+	  5e-7,
+	  7e-7,
+	  1e-6,
+	  2e-6,
+	  3e-6,
+	  5e-6,
+	  7e-6,
+	  8e-6,
+	  9e-6,
+	  1e-5,
+	  3e-5,
+	  1e-4
+    ],
+    "repeats": 10,
+    "max_faults_per_trial": 250000,
+    "fault_scenarios": [
+      {
+        "name": "saf_balanced",
+        "fault_mix": {
+          "SA0": 0.5,
+          "SA1": 0.5
+        }
+      },
+      {
+        "name": "sa0_dominant",
+        "fault_mix": {
+          "SA0": 0.8,
+          "SA1": 0.2
+        }
+      },
+      {
+        "name": "sa1_dominant",
+        "fault_mix": {
+          "SA0": 0.2,
+          "SA1": 0.8
+        }
+      }
+    ],
+    "spatial_distributions": [
+      {
+        "name": "uniform",
+        "kind": "uniform"
+      },
+      {
+        "name": "fbb_bank_clustered",
+        "kind": "fbb_bank_clustered",
+        "hot_fbb_fraction": 0.01,
+        "hot_fault_fraction": 0.8,
+        "hot_bank_fraction": 0.875
+      }
+    ]
+  },
+  "accuracy_targets": {
+    "retention_ratios": [
+      0.95,
+      0.97,
+      0.98
+    ],
+    "required_trial_pass_rate": 0.95,
+    "confidence": 0.95
+  },
+  "execution": {
+    "resume": true,
+    "save_plots": true,
+    "evaluate_original_fp32": true
+  }
+}
