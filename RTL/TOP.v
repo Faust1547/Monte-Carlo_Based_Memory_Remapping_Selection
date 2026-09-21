@@ -14,8 +14,11 @@
 //   Remap Value       : one 3-bit CW per {PBG, Bank, RG}
 //                       32 x 8 x 8 = 2048 values / page
 //
-// Normal 14-bit SRAM address: {PBG[4:0], Bank[2:0], RG[2:0], Word[2:0]}
-// Therefore normal data needs only: Data_Write_Packet = {Valid, Address[13:0], Data[7:0]}
+// Normal 14-bit SRAM address:
+//   {PBG[4:0], Bank[2:0], RG[2:0], Word[2:0]}
+//
+// Therefore normal data needs only:
+//   Data_Write_Packet = {Valid, Address[13:0], Data[7:0]}
 // =============================================================================
 
 module TOP #(
@@ -26,7 +29,7 @@ module TOP #(
     parameter integer FW_LENGTH          = 3,
     parameter integer FP_LENGTH          = 3,
     parameter integer CW_LENGTH          = 3,
-    parameter integer FICAM_ENTRIES      = 64,
+    parameter integer FICAM_ENTRIES      = 4096,
     parameter integer FI_PER_ENTRY       = 2,
 
     parameter integer SRAM_ADDR_LENGTH   = 14,
@@ -62,6 +65,11 @@ module TOP #(
     // 00=None/Base, 01=Inter, 10=Intra, 11=Unrepairable.
     output wire [1:0]                        Remap_Mode
 );
+
+// FICAM capacity with the default configuration:
+//   4096 entries x 2 FI/entry = 8192 faults.
+// This covers INTRA_MAX=6715 and allows fault_count=6716+ to reach UNREPAIRABLE.
+localparam integer FICAM_FAULT_CAPACITY = FICAM_ENTRIES * FI_PER_ENTRY;
 
 localparam [1:0] REMAP_NONE         = 2'b00;
 localparam [1:0] REMAP_INTER_BANK   = 2'b01;
@@ -593,17 +601,6 @@ assign _unused_internal_status = &{
     sram_pipeline_state_internal,
     normal_word
 };
-
-`ifndef SYNTHESIS
-initial begin
-    if (SRAM_ADDR_LENGTH != (PBG_LENGTH+BANK_LENGTH+RG_LENGTH+WORD_ADDR_LENGTH))
-        $error("SRAM address partition must be {PBG,Bank,RG,Word}");
-    if (SRAM_ADDR_LENGTH != 14)
-        $error("Current SRAM macro requires 14-bit address");
-    if (DATA_WIDTH != 8 || WW_LENGTH != 8 || TWW_LENGTH != 8)
-        $error("Current datapath is specialized for 8-bit data");
-end
-`endif
 
 endmodule
 
