@@ -1,0 +1,33 @@
+{
+  "checkpoint_path": "D:\\Anaconda\\PythonCode\\data\\alexnet_cifar10_ckpt_best.pth",
+  "state_dict_tensor_count": 16,
+  "strict_load": true,
+  "selected_parameter_count": 35855178,
+  "bounding_box_size": 4,
+  "block_count": 8963795,
+  "occupied_fbb_count": 87540,
+  "valid_storage_bytes": 44818973,
+  "valid_storage_bits": 358551784,
+  "allocated_fbb_bytes_including_padding": 44820480,
+  "occupied_16KiB_pages_including_padding": 2736,
+  "exp_p_one_measured": [
+    0.0,
+    0.0,
+    1.0,
+    1.0,
+    0.9637190497997778,
+    0.03725799173229642,
+    0.0709711679037729,
+    0.4823711385635214
+  ],
+  "sm_p_one_measured": [
+    0.4913970026867528,
+    0.4320810232764707,
+    0.4274414144590218,
+    0.45040094348436926,
+    0.4754796922218598,
+    0.49279253334065165,
+    0.4985967438231655,
+    0.5019816384679502
+  ]
+}
