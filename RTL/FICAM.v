@@ -2,6 +2,7 @@
 // FICAM
 // =============================================================================
 // Direct packed fault-entry memory for ONE current page evaluation.
+// Default depth is 4096 entries (12-bit index, 13-bit entry count).
 //
 // Default packed entry = 42 bits:
 //   { Entry_Valid,
@@ -27,7 +28,7 @@ module FICAM #(
     parameter integer RG_LENGTH        = 3,
     parameter integer FW_LENGTH        = 3,
     parameter integer FP_LENGTH        = 3,
-    parameter integer FICAM_ENTRIES    = 64,
+    parameter integer FICAM_ENTRIES    = 4096,
     parameter integer FI_PER_ENTRY     = 2,
 
     parameter integer FI_SLOT_WIDTH    = 1 + FW_LENGTH + FP_LENGTH,
