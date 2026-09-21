@@ -1,5 +1,3 @@
-`timescale 1ns / 1ps
-
 module Data_Shifter #(
     parameter SM_LENGTH   = 3,
     parameter DATA_LENGTH = 8
