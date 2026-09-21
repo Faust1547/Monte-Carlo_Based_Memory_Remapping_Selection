@@ -1,5 +1,3 @@
-`timescale 1ns / 1ps
-
 module Control_Unit #(
     parameter integer NUM_MODEL_PAGES       = 1,
     parameter integer PAGE_INDEX_WIDTH      = 1,
