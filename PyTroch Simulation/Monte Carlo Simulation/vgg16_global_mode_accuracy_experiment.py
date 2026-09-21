@@ -23,12 +23,6 @@ This program implements the offline experiment discussed for VGG16 + CIFAR-10:
 
 Important modeling boundary
 ---------------------------
-The included codec is an explicit B=4 block floating-point storage model:
-one shared 8-bit exponent byte and four 8-bit sign/magnitude bytes. It creates
-exactly the continuous FBB pattern EXP, SM0, SM1, SM2, SM3. If the final project
-uses a different MSFP encoder, replace only BlockMSFCodec; fault generation,
-remap control search, global-mode evaluation, and reporting can remain intact.
-
 The remap's logical-bit effect intentionally matches the earlier Monte Carlo
 abstraction:
     baseline logical bit = physical bit
