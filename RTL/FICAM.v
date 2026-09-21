@@ -1,3 +1,25 @@
+// =============================================================================
+// FICAM
+// =============================================================================
+// Direct packed fault-entry memory for ONE current page evaluation.
+//
+// Default packed entry = 42 bits:
+//   { Entry_Valid,
+//     PPN[15:0],
+//     PBG_ID[4:0],
+//     Bank_ID[2:0],
+//     RG_ID[2:0],
+//     FI1_Valid, FI1_FW[2:0], FI1_FP[2:0],
+//     FI0_Valid, FI0_FW[2:0], FI0_FP[2:0] }
+//
+// PBG_ID is explicit because remap-value granularity is:
+//   Inter : one Shift Mode per PBG
+//   Intra : one CW per {PBG, Bank, RG}
+//
+// Repeated {PPN,PBG,Bank,RG} tags are legal.  This allows more than
+// FI_PER_ENTRY faults in one RG by using multiple packed FICAM entries.
+// =============================================================================
+
 module FICAM #(
     parameter integer PPN_LENGTH       = 16,
     parameter integer PBG_LENGTH       = 5,
