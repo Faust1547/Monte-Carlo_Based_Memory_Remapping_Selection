@@ -26,7 +26,7 @@ python "PyTorch Simulation/Monte Carlo Simulation/VGG16/vgg16_global_mode_accura
 python "PyTorch Simulation/Generate Constraint Data/generate_constraint_dat.py" \
   --storage-audit "PyTorch Simulation/Generate Constraint Data/VGG16/storage_audit.json" \
   --regions-csv "PyTorch Simulation/Generate Constraint Data/VGG16/ber_constraint_regions.csv" \
-  --target-retention 0.98 \
+  --target-retention 0.98 \ # 目標準確率
   --selection-policy selected_pooled_wilson_monotonic \
   --storage-bit-source valid \
   --rounding floor \
