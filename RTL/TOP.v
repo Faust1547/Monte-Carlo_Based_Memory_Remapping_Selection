@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 // =============================================================================
 // Interface_With_SRAM_Command_Pipeline
 // =============================================================================
@@ -15,11 +14,8 @@
 //   Remap Value       : one 3-bit CW per {PBG, Bank, RG}
 //                       32 x 8 x 8 = 2048 values / page
 //
-// Normal 14-bit SRAM address:
-//   {PBG[4:0], Bank[2:0], RG[2:0], Word[2:0]}
-//
-// Therefore normal data needs only:
-//   Data_Write_Packet = {Valid, Address[13:0], Data[7:0]}
+// Normal 14-bit SRAM address: {PBG[4:0], Bank[2:0], RG[2:0], Word[2:0]}
+// Therefore normal data needs only: Data_Write_Packet = {Valid, Address[13:0], Data[7:0]}
 // =============================================================================
 
 module TOP #(
