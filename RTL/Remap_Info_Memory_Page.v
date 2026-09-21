@@ -1,15 +1,11 @@
-`timescale 1ns / 1ps
 // =============================================================================
 // Remap_Info_Memory_Page
 // =============================================================================
 // Remap-value storage for ONE current page.
-//
 // Inter:
 //   32 PBG x 1 Shift Mode = 32 x 3-bit
-//
 // Intra:
 //   32 PBG x 8 Bank x 8 RG x 1 CW = 2048 x 3-bit
-//
 // Global Remap Mode is held by the Control Unit; this module stores only values.
 // =============================================================================
 
@@ -53,12 +49,7 @@ assign intra_write_index = {Intra_Write_PBG, Intra_Write_Bank, Intra_Write_RG};
 
 assign Inter_Shift_Out = Inter_Shift_Mem[Read_PBG];
 assign Intra_CW_Out    = Intra_CW_Mem[intra_read_index];
-
-// No array-wide reset is required:
-//   * Inter evaluation writes all 32 PBG locations before Data_Ready can assert.
-//   * Intra evaluation writes all 2048 {PBG,Bank,RG} locations before Data_Ready.
-//   * Base/Unrepairable modes never consume remap values.
-// Avoiding a 2048-word reset network is substantially friendlier to synthesis.
+    
 always @(posedge clk) begin
     if (Inter_Write_Enable)
         Inter_Shift_Mem[Inter_Write_PBG] <= Inter_Shift_In;
