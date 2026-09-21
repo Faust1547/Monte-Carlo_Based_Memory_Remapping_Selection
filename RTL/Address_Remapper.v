@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 module Address_Remapper #(
     parameter integer WORD_ADDR_LENGTH = 3,
     parameter integer CW_LENGTH        = 3
