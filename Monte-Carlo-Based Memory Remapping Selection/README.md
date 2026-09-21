@@ -4,6 +4,11 @@
 
 `TOP.v`
 
+## Testbench
+
+`tb_TOP.v`
+
+
 ## Module Hierarchy
 
 ```text
