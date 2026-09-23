@@ -68,3 +68,7 @@ python "PyTorch Simulation/Generate Constraint Data/generate_constraint_dat.py" 
 ### VGG16
 - `ber_constraint_regions.csv`
 - `storage_audit.json`
+
+## 實驗參數
+<img width="750" height="450" alt="image" src="https://github.com/user-attachments/assets/e806a47c-1061-4432-a2a0-2cb54ffef383" />
+<img width="750" height="300" alt="image" src="https://github.com/user-attachments/assets/b81cc70f-2607-44ce-87bc-f6a970238cb1" />
