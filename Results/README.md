@@ -12,7 +12,7 @@ Results
     └── Timing
 ```
 ## RTL Simulation
-透過 Testbench 驗證 AES-128 加密與解密功能，比對預期結果與實際輸出，並展示六組測試案例之 Post-simulation 通過結果。
+透過 Testbench 驗證 Fault-count Throshold 選擇重新映射模式正確性與運算符合對應模式進行處理，展示以檢測出 46 筆故障資訊輸入為測試案例之 Post-simulation 正確選擇預期之重新映射模式結果。
 
 ## VLSI Implement
 | Specification | TSMC 90 nm 1P9M | TSMC N16 ADFP |
