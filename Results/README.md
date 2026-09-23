@@ -23,3 +23,4 @@ Results
 | Core Area | 835,875.489 μm² |
 | Chip Area | 1,450,397.276 μm² | 
 | LVS | Correct |
+| Partition | ✔ |
