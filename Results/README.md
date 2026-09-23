@@ -12,9 +12,9 @@ Results
     └── Timing
 ```
 ## RTL Simulation
-透過 Testbench 驗證 Fault-count Throshold 選擇重新映射模式正確性與運算符合對應模式進行處理，展示以檢測出 46 筆故障資訊輸入為測試案例之 Post-simulation 正確選擇預期之重新映射模式結果。
+透過 Testbench 驗證 Fault-Count Threshold 的重新映射模式選擇功能，並以偵測到 46 筆故障資訊的案例，比對預期與實際選擇結果。
 
-## VLSI Implement
+## Physical Implementation
 | Specification | TSMC 90 nm 1P9M |
 |---|---|
 | Frequency | 200 MHz |
@@ -23,4 +23,3 @@ Results
 | Core Area | 835,875.489 μm² |
 | Chip Area | 1,450,397.276 μm² | 
 | LVS | Correct |
-| Partition | ✔ |
