@@ -18,8 +18,10 @@ Results
 | Specification | TSMC 90 nm 1P9M |
 |---|---|
 | Frequency | 200 MHz |
+|Page Buffer Size| 16 KB |
 | Timing Closure | Setup / Hold Met |
 | Dynamic Power | 37.2271 mW |
+| Cell Leakage Power | 2.1886 mW |
 | Core Area | 835,875.489 μm² |
 | Chip Area | 1,450,397.276 μm² | 
 | LVS | Correct |
