@@ -12,14 +12,14 @@ Results
     └── Timing
 ```
 ## RTL Simulation
-透過 Testbench 驗證 AES-128 加密與解密功能，比對預期結果與實際輸出，並展示六組測試案例之 Post-simulation 通過結果。
+透過 Testbench 驗證 Fault-Count Threshold 的重新映射模式選擇功能，並以偵測到 46 筆故障資訊的案例，比對預期與實際選擇結果。
 
-## VLSI Implement
-| Specification | TSMC 90 nm 1P9M | TSMC N16 ADFP |
-|---|---|---|
-| Frequency | 200 MHz | 1.25 GHz |
-| Timing Closure | Setup / Hold Met | Setup / Hold Met|
-| Dynamic Power | 17.7559 mW | 10.6 mW |
-| Core Area | 557,343.647 μm² | 10,777.54 μm² |
-| Chip Area | 1,044,749.730 μm² | 21,025.00 μm² |
-| LVS | Correct | Correct |
+## Physical Implementation
+| Specification | TSMC 90 nm 1P9M |
+|---|---|
+| Frequency | 200 MHz |
+| Timing Closure | Setup / Hold Met |
+| Dynamic Power | 37.2271 mW |
+| Core Area | 835,875.489 μm² |
+| Chip Area | 1,450,397.276 μm² | 
+| LVS | Correct |
