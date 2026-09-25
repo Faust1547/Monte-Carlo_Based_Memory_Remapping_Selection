@@ -2,8 +2,8 @@
 ``` text
 Results
 ├── README.md
-├── RTL Simulation Result
-│   └── Post-sim_RTL_Result.png
+├── Post-sim Result
+│   └── Post-sim_Result.png
 └── VLSI Implement
     ├── Area
     ├── Chip
