@@ -5,10 +5,10 @@
 
 <img width="1200" height="404" alt="image" src="https://github.com/user-attachments/assets/076d65cd-67b5-46e8-98fe-42074626f6ed" />
 
-## Software Flow
+## PyTroch Simulation
 主要由 Python 完成，使用 PyTroch 組件進行 DNN 模型訓練，包含完整模型訓練程式、蒙地卡羅模擬實驗程式與參數、Fault-count Threshold 產生程式與參數。詳細操作流程與指令皆紀錄於該資料夾之 README 文件。
 
-## RTL Architecture
+## Verilog
 主要由 Verilog 完成，包含完整硬體RTL、Testbench。詳細模組說明與層級介紹皆紀錄於該資料夾之 README 文件。
 
 ## Results
