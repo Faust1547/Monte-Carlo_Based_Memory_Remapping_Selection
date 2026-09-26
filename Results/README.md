@@ -3,7 +3,8 @@
 Results
 ├── README.md
 ├── Post-sim Result
-│   └── Post-sim_Result.png
+│   ├── README.md
+│   └── vgg16_cifar10_r980_constraint.dat
 └── VLSI Implement
     ├── Area
     ├── Chip
