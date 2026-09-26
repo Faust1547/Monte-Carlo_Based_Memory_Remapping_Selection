@@ -11,7 +11,7 @@ Results
     ├── Power
     └── Timing
 ```
-## RTL Simulation
+## Post-sim Result
 透過 Testbench 驗證 Fault-Count Threshold 的重新映射模式選擇功能，並以偵測到 46 筆故障資訊的案例，比對預期與實際選擇結果。
 
 ## Physical Implementation
