@@ -1,48 +1,17 @@
 # Post-sim Result Screenshot
-### 1. Memory Initialization & Instruction Execution
+共 46 筆錯誤資訊，依據區間選擇 Inter-bank 模式進行重新映射。
 
-<img width="414" height="235" alt="image" src="https://github.com/user-attachments/assets/ee60c1be-8c2b-4774-9395-59e8cb1fd479" />
+<img width="539" height="212" alt="Post-sim_Result" src="https://github.com/user-attachments/assets/204a52ea-c54c-4337-b248-f38a59003687" />
 
+# Mode Selection BER-based Constraint Plot (Accuracy Target 0.98)
+根據蒙地卡羅實驗最後歸納出的 BER-based 重新映射模式選擇的區間。
 
-### 2. Final Data Memory
-<img width="321" height="697" alt="image" src="https://github.com/user-attachments/assets/24638c93-8d06-4c84-bae2-590c8d27e3d4" />
+<img width="1620" height="864" alt="selected_mode_target_0 980" src="https://github.com/user-attachments/assets/8b8b50df-d5b5-4c60-92e6-ab1fe6c186a8" />
 
-
-### 3. Verification Summary
-<img width="545" height="111" alt="image" src="https://github.com/user-attachments/assets/9de9ee7e-3dd1-4645-88a0-60ed06edaf4e" />
-
-# Load-Use Hazard Test Case
+# Mode Selection Fault-count Threshold (Accuracy Target 0.98)
+BER-based 重新映射模式選擇區間根據 DNN 模型有效位元數換算的 Fault-count Threshold 區間。
 ``` text
-lw $1, 0($0)
-add  $2, $1, $1
-sw $2, 4($0)
+000000 ~ 000001  ->  BASE 
+000001 ~ 00053F  ->  INTER
+00053F ~ 001A3B  ->  INTRA
 ```
-## Load-Use Hazard Verification
-本測試使用連續的 Load、Add 與 Store 指令，驗證 Hazard Detection 與 Forwarding 機制能否正確處理資料相依，避免後續指令使用尚未更新的暫存器資料。
-|Dependency|	Expected Behavior|
-|---|---|
-|lw → add	|偵測 Load-use Hazard，插入必要的 Stall，待資料可用後透過 Forwarding 提供給 ALU|
-|add → sw	|將更新後的 $2 傳遞至 Store 指令，確保寫入資料正確|
-
-
-## Input Data
-| Data Type | Data Name |
-|---|---|
-| Instruction input file | `IM_32bit.txt ` |
-| Data Memory input file | `DM_32bit.txt ` |
-
-## Verification Data
-| Data Type | Data Name |
-|---|---|
-| Data Memory  | `expected_DM.dat ` |
-| Register File | `expected_RF.dat` |
-| Write Back Data  | `expected_WB.dat` |
-| Store Word Data | `expected_SW.dat` |
-
-## Output Data
-| Data Type | Data Name |
-|---|---|
-| Data Memory Output file | `DM_out.dat` |
-| Register File Output file | `RF_out.dat` |
-| Write Back Data Output file  | `WB_out.dat` |
-| Store Word Data Output file| `SW_out.dat` |
