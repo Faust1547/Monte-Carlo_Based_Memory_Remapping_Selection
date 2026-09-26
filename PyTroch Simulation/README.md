@@ -6,7 +6,6 @@
 2. Run Monte Carlo Simulation
 3. Generate Constraint Data
 
----
 
 ## 執行方式
 ### 1. Train Models
@@ -34,7 +33,7 @@ python "PyTorch Simulation/Generate Constraint Data/generate_constraint_dat.py" 
   --output-dat VGG16_cifar10_r980_constraint.dat \
   --output-metadata VGG16_cifar10_r980_constraint_metadata.json
 ```
----
+
 ## Train Models
 
 用於訓練基於 CIFAR-10 資料集的 AlexNet 與 VGG16 模型，
