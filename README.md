@@ -12,4 +12,4 @@
 主要由 Verilog 完成，包含完整硬體RTL、Testbench。詳細模組說明與層級介紹皆紀錄於該資料夾之 README 文件。
 
 ## Results
-包含程式執行結果與實體設計之時序、面積、功耗紀錄，以及晶片實現結果與 Partition 表示。
+包含 Post-sim 結果與 TSMC 90nm 1P9M 實體設計之時序、面積、功耗紀錄，以及晶片實現結果與 Partition 表示。
