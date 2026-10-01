@@ -13,3 +13,5 @@
 
 ## Results
 包含 Post-sim 結果與 TSMC 90nm 1P9M 實體設計之時序、面積、功耗紀錄，以及晶片實現結果與 Partition 表示。
+
+_Portfolio version prepared by TSAI An-Hao, September 29, 2026._
